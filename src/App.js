@@ -23,9 +23,8 @@ class App extends Component {
       answerOptions: [],
       answer: '',
       answersCount: {
-        Stark: 0,
-        Lannister: 0,
-        Targaryen: 0
+        TrueAnswer: 0,
+        FalseAnswer: 0
       },
       result: ''
     };
@@ -100,15 +99,29 @@ class App extends Component {
     const answersCountValues = answersCountKeys.map((key) => answersCount[key]);
     const maxAnswerCount = Math.max.apply(null, answersCountValues);
  
-    return answersCountKeys.filter((key) => answersCount[key] === maxAnswerCount);
+    //return answersCountKeys.filter((key) => answersCount[key] === maxAnswerCount);
+    return answersCount["TrueAnswer"]
   }
  
   setResults(result) {
-    if (result.length === 1) {
-      this.setState({ result: result[0] });
-    } else {
-      this.setState({ result: 'Undetermined' });
-    }
+    // if (result.length === 1) {
+    //   this.setState({ result: result[0] });
+    // } else {
+    //   this.setState({ result: 'Undetermined' });
+    // }
+    if (result == 5) {
+      this.setState({ result: "are Awesome! You got all 5 questions correct!" });
+    } else if (result == 4){
+      this.setState({ result: "did a very good job! You got 4 out of 5 questions correct!" });
+    } else if (result == 3){
+      this.setState({ result: "did a good job! You got 3 out of 5 questions correct." });
+    } else if (result == 2){
+      this.setState({ result: "did an OK job! You got 2 out of 5 questions correct." });
+    } else if (result == 1){
+      this.setState({ result: "still need practice! You got 1 out of 5 questions correct." });
+    } else if (result == 0){
+      this.setState({ result: "still need practice! I'm sorry that you missed all 5 questions." });
+    } 
   }
  
   renderQuiz() {

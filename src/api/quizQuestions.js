@@ -1,31 +1,3 @@
-// var minimum = 1;
-// var maximum = 100;
-// var int1 = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
-// var int2 = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
-// // swap integers to make sure int1 <= int2
-// if (int1 < int2){
-//     var tmp = int1
-//     int1 = int2
-//     int2 = tmp
-// }
-// var operators = [' + ', ' - ', ' x ', ' / '];
-// var opidx = Math.floor(Math.random() * 4)
-
-// if (opidx == 0){
-//     var true_answer = int1 + int2;
-// } else if (opidx == 1){
-//     var true_answer = int1 - int2;
-// } else if (opidx == 2){
-//     var true_answer = int1 * int2;
-// } else if (opidx == 3){
-//     var true_answer = int1 / int2;
-// }
-
-// var min_possible_answer = Math.max(1, true_answer - 20);
-// var max_possible_answer = true_answer + 20;
-// var possible_answer1 = Math.floor(Math.random()* (max_possible_answer-min_possible_answer+1)) + min_possible_answer;
-// var possible_answer2 = Math.floor(Math.random()* (max_possible_answer-min_possible_answer+1)) + min_possible_answer;
-
 function generate_random_question(){
     
     var question_info = new Array(4)
@@ -51,6 +23,8 @@ function generate_random_question(){
         var true_answer = int1 * int2;
     } else if (opidx == 3){
         var true_answer = int1 / int2;
+        true_answer = Math.max(2, Math.ceil(true_answer))
+        int1 = int2 * true_answer
     }
     
     var min_possible_answer = Math.max(1, true_answer - 20);
@@ -76,17 +50,17 @@ var quizQuestions = [
       question: question_info1[0],
       answers: [
           {
-              type: "Stark",
+              type: "TrueAnswer",
               content: question_info1[1]
               
           },
   
           {
-              type: "Lannister",
+              type: "FalseAnswer",
               content: question_info1[2]
           },
           {
-              type: "Targaryen",
+              type: "FalseAnswer",
               content: question_info1[3]
           }
       ]
@@ -95,17 +69,17 @@ var quizQuestions = [
     question: question_info2[0],
     answers: [
         {
-            type: "Stark",
+            type: "TrueAnswer",
             content: question_info2[1]
             
         },
 
         {
-            type: "Lannister",
+            type: "FalseAnswer",
             content: question_info2[2]
         },
         {
-            type: "Targaryen",
+            type: "FalseAnswer",
             content: question_info2[3]
         }
     ]
@@ -114,17 +88,17 @@ var quizQuestions = [
     question: question_info3[0],
     answers: [
         {
-            type: "Stark",
+            type: "TrueAnswer",
             content: question_info3[1]
             
         },
 
         {
-            type: "Lannister",
+            type: "FalseAnswer",
             content: question_info3[2]
         },
         {
-            type: "Targaryen",
+            type: "FalseAnswer",
             content: question_info3[3]
         }
     ]
@@ -133,17 +107,17 @@ var quizQuestions = [
     question: question_info4[0],
     answers: [
         {
-            type: "Stark",
+            type: "TrueAnswer",
             content: question_info4[1]
             
         },
 
         {
-            type: "Lannister",
+            type: "FalseAnswer",
             content: question_info4[2]
         },
         {
-            type: "Targaryen",
+            type: "FalseAnswer",
             content: question_info4[3]
         }
     ]
@@ -152,17 +126,17 @@ var quizQuestions = [
     question: question_info5[0],
     answers: [
         {
-            type: "Stark",
+            type: "TrueAnswer",
             content: question_info5[1]
             
         },
 
         {
-            type: "Lannister",
+            type: "FalseAnswer",
             content: question_info5[2]
         },
         {
-            type: "Targaryen",
+            type: "FalseAnswer",
             content: question_info5[3]
         }
     ]

@@ -1,41 +1,55 @@
+var minimum = 1;
+var maximum = 100;
+var int1 = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
+var int2 = Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
+var operators = [' + ', ' - ', ' x ', ' / '];
+var opidx = Math.floor(Math.random() * 4)
 
+if (opidx == 0){
+    var true_answer = int1 + int2;
+} else if (opidx == 1){
+    var true_answer = int1 - int2;
+} else if (opidx == 2){
+    var true_answer = int1 * int2;
+} else if (opidx == 3){
+    var true_answer = int1 / int2;
+}
 
 var quizQuestions = [
   {
-      question: "What is your spirit animal ? ",
+      question: "20 + 36 ",
       answers: [
           {
               type: "Stark",
-              content: "Wolf"
+              content: "46"
               
           },
   
  
- 
           {
               type: "Lannister",
-              content: "Lion"
+              content: "56"
           },
           {
               type: "Targaryen",
-              content: "Dragon"
+              content: "66"
           }
       ]
   },
   {
-      question: "What do you value most ? ",
+      question: int1.toString() + operators[opidx] + int2.toString() ,
       answers: [
           {
               type: "Stark",
-              content: "Loyalty"
+              content: true_answer
           },
           {
               type: "Lannister",
-              content: "Money"
+              content: "3"
           },
           {
               type: "Targaryen",
-              content: "Power"
+              content: "5"
           }
       ]
   },
